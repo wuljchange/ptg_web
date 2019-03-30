@@ -1,7 +1,7 @@
 export default class Request {
 	post(path, body) {
 		return new Promise((resolve, reject) => {
-			fetch(('http://10.100.51.157:8088/' + path),
+			fetch(('http://127.0.0.1:8088/' + path),
 			    {
 					method: 'POST',
 					credentials: 'same-origin',

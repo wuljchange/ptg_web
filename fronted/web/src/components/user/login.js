@@ -5,8 +5,8 @@ import Request from '../../helpers/request';
 import show_error from '../../helpers/alert';
 
 export default class Login extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.request = new Request();
 		this.make_post = this.make_post.bind(this);
 	}
@@ -28,25 +28,15 @@ export default class Login extends Component {
 	render() {
 		return (
 			<form onSubmit={event => this.make_post(event)}>
-			    <div class="col-auto">
-				    <div class="input-group mb-2">
-					    <div class="input-group-prepend">
-                            <div class="input-group-text">用户名</div>
-                        </div>
-                        <input type="text" class="form-control" id="username" placeholder="Username" />
-                    </div>
+				<div className="form-group">
+					<label>用户名</label>
+					<input type="text" id="username" className="form-control" placeholder="username" />
 				</div>
-				<div class="col-auto">
-				    <div class="input-group mb-2">
-					    <div class="input-group-prepend">
-				            <div class="input-group-text">密码</div>
-				        </div>
-				        <input type="text" class="form-control" id="password" placeholder="Password" />
-				    </div>
+				<div className="form-group">
+					<label>密码</label>
+					<input type="password" id="password" className="form-control"/>
 				</div>
-				<div class="col-auto">
-				    <button type="submit" class="btn btn-primary mb-2">登录</button>
-				</div>
+				<button type="submit" className="btn btn-primary">登录</button>
 			</form>
 		)
 	}
